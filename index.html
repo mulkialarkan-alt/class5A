@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Links-->
+    <link rel="shortcut icon" href="../img/5aicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--CSS-->
+    <style>
+body {
+    background: white;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100vw;
+    height: 50px;
+    box-shadow: inset 0 0 100px #555555;
+    position: fixed;
+    padding: 5px 0;
+    top: 0;
+    left: 0;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    position: fixed;
+    left: 5px;
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    background: #909090;
+    position:fixed;
+    left: 0;
+    bottom: 0;
+}
+
+footer h6{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+#sideopener{
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 48px;
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+}
+
+#sideopener:hover{
+    color: #d0d0d0;
+}
+
+#sidecloser {
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 48px;
+    left: 5px;
+    cursor: pointer;
+}
+
+#sidebar {
+    width: 0;
+    height: 100%;
+    background: #909090;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+    overflow-x: hidden;
+    box-shadow: -5px 0 50px gray;
+}
+
+#sidebar nav a{
+    font-size: 2rem;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s;
+}
+
+#sidebar nav a:hover{
+    background-color: #aaa;
+}
+
+#sidebar h3{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    transition: 0.3s;
+}
+
+#main{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #505050;
+    overflow-x: hidden;
+}
+
+#line {
+    background-color: #d0d0d0;
+    padding: 2px 100%;
+    position: fixed;
+}
+
+#settingbtn{
+    font-size: 30px;
+    color: white;
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#settingbtn:hover{
+    background: #aaa;
+}
+
+@media screen and (max-height: 450px) {
+    #sidebar {padding-top: 15px;}
+    #sidebar a {font-size: 18px;}
+}
+    </style>
+
+    <!--JS-->
+    <script>
+        function opennav(){
+    document.getElementById("sideopener").style.fontSize = 0;
+    document.getElementById("sidebar").style.width = '200px';
+}
+
+function closenav(){
+    document.getElementById("sideopener").style.fontSize = '48px';
+    document.getElementById("sidebar").style.width = 0;
+}
+
+var darkmode = false
+function thememode(){
+    if (darkmode == false){
+        darkmode = true
+        document.getElementById("#").style.background = "#202020";
+        document.getElementById("main").style.color = "white";
+        document.getElementById("footer").style.background = "#555555";
+    }else{
+        darkmode = false
+        document.getElementById("#").style.background = "white";
+        document.getElementById("main").style.color = "#505050";
+        document.getElementById("footer").style.background = "#909090"
+    }
+}
+
+function home(){
+    document.getElementById("main").innerHTML = '<h1 id="home">Home</h1><h3>Selamat Datang! Ini adalah Website Kelas 5A Ciganjur 01.</h3><h3>Jika ingin melihat Tentang kelas kami atau Kontak, Tekan tombol di kanan atas dan pilih.</h3>';
+}
+
+function about(){
+    document.getElementById("main").innerHTML = '<h1 id="about">About</h1><h3>Kelas 5A adalah kelas yang ramah dan aktif di Ciganjur 01.</h3><h3>Ekskul yang kami ikuti itu Pramuka, PMR, Futsal, Marching band, dan lain-lain.</h3>';
+}
+
+function contact(){
+    document.getElementById("main").innerHTML = '<h1 id="contact">Contact</h1><h3>Dibuat Oleh : Yafa Mulki Al-Arkan</h3><h3>Guru : Ibu Puji </h3><h3>Sekolah : SDN Ciganjur 01</h3>';
+}
+    </script>
+
+    <title>Class 5A</title>
+</head>
+<body id="#">
+    <header id="header">
+        <a href="#">5A</a>
+        <button id="sideopener" onclick="opennav()"><i class="fa fa-bars"></i></button>
+    </header>
+
+    <br><br>
+
+    <main id="main">
+        <h1 id="home">Home</h1>
+        <h3>Selamat Datang! Ini adalah Website Kelas 5A Ciganjur 01.</h3>
+        <h3>Jika ingin melihat Tentang kelas kami atau Kontak, Tekan tombol di kanan atas dan pilih.</h3>
+    </main>
+
+    <footer id="footer">
+        <h6>&copy; 2026 Arkans. All rights reversed. This is Unofficial school website.</h6>
+    </footer>
+
+    <div id="sidebar">
+        <button id="sidecloser" onclick="closenav()"><i class="fa fa-close"></i></button>
+        <h3>Navigation</h3>
+        <nav>
+            <a href="#home" onclick="home()">Home</a>
+            <a href="#about" onclick="about()">About</a>
+            <a href="#contact" onclick="contact()">Contact</a>
+        </nav>
+        <br>
+        <h3>Setting</h3>
+        <button id="settingbtn" onclick="thememode()">Theme</button>
+    </div>
+</body>
+</html>
